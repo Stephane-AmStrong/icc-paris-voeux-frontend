@@ -13,9 +13,9 @@ export default function MyWishes() {
 
   const encodedPageToPrint = encodeURIComponent(pageToPrint);
 
-  console.log(
-    `pageToPrint: ${pageToPrint} encodedPageToPrint: ${encodedPageToPrint}`
-  );
+  // console.log(
+  //   `pageToPrint: ${pageToPrint} encodedPageToPrint: ${encodedPageToPrint}`
+  // );
 
   return (
     <main>

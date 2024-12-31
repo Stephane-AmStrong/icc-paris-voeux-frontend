@@ -6,8 +6,8 @@ import { useGetWishesQuery } from "../../features/wishes/wishesApiSlice";
 export default function PDF() {
   const { id } = useParams();
 
-  const baseUrl = window.location.origin;
-  console.log(`baseUrl: ${baseUrl}/print-pdf/${id}`);
+  // const baseUrl = window.location.origin;
+  // console.log(`baseUrl: ${baseUrl}/print-pdf/${id}`);
 
   const { wish } = useGetWishesQuery("wishesList", {
     selectFromResult: ({ data }) => ({ wish: data?.entities[id] }),

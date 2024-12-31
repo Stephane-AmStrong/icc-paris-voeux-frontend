@@ -78,10 +78,10 @@ export default function WishesForm() {
       setNewWish(response);
 
       if (error) {
-        console.log(`Erreur serveur: ${error?.data?.message}`);
+        // console.log(`Erreur serveur: ${error?.data?.message}`);
       }
     } else {
-      console.log(validationError);
+      // console.log(validationError);
     }
   }
 
