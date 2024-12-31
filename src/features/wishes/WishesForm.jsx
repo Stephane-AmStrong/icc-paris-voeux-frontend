@@ -205,7 +205,7 @@ export default function WishesForm() {
           </label>
           <div className="input-group">
             <span className="input-group-text" id="basic-addon1">
-              <i className="bi-person custom-icon" />
+              <i className="bi-envelope custom-icon" />
             </span>
             <input
               type="text"

@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Layout from "./components/Layout";
 import MyWishes from "./pages/MyWishes";
+import PDF from "./pages/PDF/PDF";
 
 function App() {
   return (
@@ -10,10 +11,10 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route path="" element={<Home />} />
           <Route path="home" element={<Home />} />
-          {/* <Route path="wish" element={<MyWishes />} /> */}
           <Route path="my-wishes/:id" element={<MyWishes />} />
-          {/* <Route path="success/:id" element={<Success />} /> */}
         </Route>
+
+        <Route path="/print/:id" element={<PDF />} />
       </Routes>
     </BrowserRouter>
   );
