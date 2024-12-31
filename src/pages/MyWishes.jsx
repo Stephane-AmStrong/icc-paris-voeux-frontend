@@ -39,7 +39,7 @@ export default function MyWishes() {
             <div class="col-lg-6 col-12 text-center mx-auto mb-4">
               <a
                 class="nav-link custom-btn btn"
-                href={`${process.env.REACT_APP_BASE_URL}/pdf/print?page=${encodedPageToPrint}`}
+                href={`${process.env.BACKEND_BASE_URL}/pdf/print?page=${encodedPageToPrint}`}
                 target="_blank"
                 rel="noreferrer"
               >
