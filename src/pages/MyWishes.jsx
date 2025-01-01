@@ -48,7 +48,7 @@ export default function MyWishes() {
               <Link
                 className="nav-link custom-btn btn"
                 to={`/print/${id}`}
-                target="_blank"
+                // target="_blank"
                 rel="noopener noreferrer"
               >
                 Télécharger mes voeux sous format PDF
