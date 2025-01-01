@@ -22,6 +22,10 @@ export default function WishesForm() {
   function validateData() {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Basic regex for email validation
 
+    // console.log(
+    //   `spiritually: ${spiritually} familiallyRelationally: ${familiallyRelationally} familiallyRelationally: ${familiallyRelationally} financiallyMaterially: ${financiallyMaterially} professionallyAcademically: ${professionallyAcademically}`
+    // );
+
     if (
       !spiritually &&
       !familiallyRelationally &&
@@ -44,8 +48,9 @@ export default function WishesForm() {
   }
 
   useEffect(() => {
-    if (newWish) {
+    if (newWish?._id) {
       navigate(`/my-wishes/${newWish._id}`);
+
       setSpiritually("");
       setFamiliallyRelationally("");
       setFinanciallyMaterially("");
@@ -61,6 +66,7 @@ export default function WishesForm() {
     const validationError = validateData();
     if (validationError) {
       setValidationError(validationError);
+      return;
     }
 
     setValidationError("");
@@ -78,10 +84,10 @@ export default function WishesForm() {
       setNewWish(response);
 
       if (error) {
-        // console.log(`Erreur serveur: ${error?.data?.message}`);
+        console.log(`Erreur serveur: ${error?.data?.message}`);
       }
     } else {
-      // console.log(validationError);
+      console.log(validationError);
     }
   }
 
