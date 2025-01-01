@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useGetWishesQuery } from "../features/wishes/wishesApiSlice";
 
 export default function MyWishes() {
@@ -31,31 +31,38 @@ export default function MyWishes() {
       </header>
 
       <section
-        class="job-section job-featured-section section-padding"
+        className="job-section job-featured-section section-padding"
         id="job-section"
       >
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6 col-12 text-center mx-auto mb-4">
-              <a
-                class="nav-link custom-btn btn"
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-6 col-12 text-center mx-auto mb-4">
+              {/* <a
+                className="nav-link custom-btn btn"
                 href={`${process.env.REACT_APP_BASE_URL}/pdf/print?page=${encodedPageToPrint}`}
-                // href={`http://localhost:3500/pdf/print?page=${encodedPageToPrint}`}
                 target="_blank"
                 rel="noreferrer"
               >
                 Télécharger mes voeux sous format PDF
-              </a>
+              </a> */}
+              <Link
+                className="nav-link custom-btn btn"
+                to={`/print/${id}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Télécharger mes voeux sous format PDF
+              </Link>
             </div>
 
-            <div class="col-lg-12 col-12">
+            <div className="col-lg-12 col-12">
               {wish?.spiritually && (
-                <div class="job-thumb d-flex">
-                  <div class="job-body d-flex flex-wrap flex-auto align-items-center ms-4">
-                    <div class="mb-3">
-                      <div class="d-flex flex-wrap align-items-center">
-                        <p class="job-location mb-0">
-                          <i class="custom-icon bi-person me-1 p-2 lead"></i>
+                <div className="job-thumb d-flex">
+                  <div className="job-body d-flex flex-wrap flex-auto align-items-center ms-4">
+                    <div className="mb-3">
+                      <div className="d-flex flex-wrap align-items-center">
+                        <p className="job-location mb-0">
+                          <i className="custom-icon bi-person me-1 p-2 lead"></i>
                           <strong>{wish.spiritually}</strong>
                         </p>
                       </div>
@@ -65,12 +72,12 @@ export default function MyWishes() {
               )}
 
               {wish?.familiallyRelationally && (
-                <div class="job-thumb d-flex">
-                  <div class="job-body d-flex flex-wrap flex-auto align-items-center ms-4">
-                    <div class="mb-3">
-                      <div class="d-flex flex-wrap align-items-center">
-                        <p class="job-location mb-0">
-                          <i class="custom-icon bi-people me-1 p-2 lead"></i>
+                <div className="job-thumb d-flex">
+                  <div className="job-body d-flex flex-wrap flex-auto align-items-center ms-4">
+                    <div className="mb-3">
+                      <div className="d-flex flex-wrap align-items-center">
+                        <p className="job-location mb-0">
+                          <i className="custom-icon bi-people me-1 p-2 lead"></i>
                           <strong>{wish.familiallyRelationally}</strong>
                         </p>
                       </div>
@@ -80,12 +87,12 @@ export default function MyWishes() {
               )}
 
               {wish?.financiallyMaterially && (
-                <div class="job-thumb d-flex">
-                  <div class="job-body d-flex flex-wrap flex-auto align-items-center ms-4">
-                    <div class="mb-3">
-                      <div class="d-flex flex-wrap align-items-center">
-                        <p class="job-location mb-0">
-                          <i class="custom-icon bi-cash me-1 p-2 lead"></i>
+                <div className="job-thumb d-flex">
+                  <div className="job-body d-flex flex-wrap flex-auto align-items-center ms-4">
+                    <div className="mb-3">
+                      <div className="d-flex flex-wrap align-items-center">
+                        <p className="job-location mb-0">
+                          <i className="custom-icon bi-cash me-1 p-2 lead"></i>
                           <strong>{wish.financiallyMaterially}</strong>
                         </p>
                       </div>
@@ -95,12 +102,12 @@ export default function MyWishes() {
               )}
 
               {wish?.professionallyAcademically && (
-                <div class="job-thumb d-flex">
-                  <div class="job-body d-flex flex-wrap flex-auto align-items-center ms-4">
-                    <div class="mb-3">
-                      <div class="d-flex flex-wrap align-items-center">
-                        <p class="job-location mb-0">
-                          <i class="custom-icon bi-briefcase me-1 p-2 lead"></i>
+                <div className="job-thumb d-flex">
+                  <div className="job-body d-flex flex-wrap flex-auto align-items-center ms-4">
+                    <div className="mb-3">
+                      <div className="d-flex flex-wrap align-items-center">
+                        <p className="job-location mb-0">
+                          <i className="custom-icon bi-briefcase me-1 p-2 lead"></i>
                           <strong>{wish.professionallyAcademically}</strong>
                         </p>
                       </div>
@@ -110,12 +117,12 @@ export default function MyWishes() {
               )}
 
               {wish?.other && (
-                <div class="job-thumb d-flex">
-                  <div class="job-body d-flex flex-wrap flex-auto align-items-center ms-4">
-                    <div class="mb-3">
-                      <div class="d-flex flex-wrap align-items-center">
-                        <p class="job-location mb-0">
-                          <i class="custom-icon bi-puzzle me-1 p-2 lead"></i>
+                <div className="job-thumb d-flex">
+                  <div className="job-body d-flex flex-wrap flex-auto align-items-center ms-4">
+                    <div className="mb-3">
+                      <div className="d-flex flex-wrap align-items-center">
+                        <p className="job-location mb-0">
+                          <i className="custom-icon bi-puzzle me-1 p-2 lead"></i>
                           <strong>{wish.other}</strong>
                         </p>
                       </div>
